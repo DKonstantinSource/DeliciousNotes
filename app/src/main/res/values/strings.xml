@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">DeliciousNotes</string>
+
+    <string name="recipes_add_menu">Добавить рецепт</string>
+    <string name="list_of_recipes_menu">Рецепты</string>
+    <string name="calculator_menu">Калькулятор БЖУ</string>
+    <string name="settings_menu">Настройки</string>
+
+</resources>

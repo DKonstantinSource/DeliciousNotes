@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_list_recipes">
+
+    <fragment
+        android:id="@+id/navigation_new_recipes"
+        android:name="com.example.deliciousnotes.ui.list.ListRecipesFragment"
+        android:label="@string/recipes_add_menu"
+        tools:layout="@layout/fragment_list_recipes" />
+
+    <fragment
+        android:id="@+id/navigation_list_recipes"
+        android:name="com.example.deliciousnotes.ui.newRecipe.NewRecipeFragment"
+        android:label="@string/list_of_recipes_menu"
+        tools:layout="@layout/fragment_new_recipe" />
+
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.example.deliciousnotes.ui.calculator.CalculatorFragment"
+        android:label="@string/settings_menu"
+        tools:layout="@layout/fragment_calculator" />
+
+    <fragment
+        android:id="@+id/navigation_calculator"
+        android:name="com.example.deliciousnotes.ui.calculator.CalculatorFragment"
+        android:label="@string/calculator_menu"
+        tools:layout="@layout/fragment_calculator" />
+</navigation>
