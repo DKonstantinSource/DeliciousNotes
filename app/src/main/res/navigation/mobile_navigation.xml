@@ -7,21 +7,21 @@
 
     <fragment
         android:id="@+id/navigation_new_recipes"
-        android:name="com.example.deliciousnotes.ui.list.ListRecipesFragment"
+        android:name="com.example.deliciousnotes.ui.newRecipe.NewRecipeFragment"
         android:label="@string/recipes_add_menu"
         tools:layout="@layout/fragment_list_recipes" />
 
     <fragment
         android:id="@+id/navigation_list_recipes"
-        android:name="com.example.deliciousnotes.ui.newRecipe.NewRecipeFragment"
+        android:name="com.example.deliciousnotes.ui.list.ListRecipesFragment"
         android:label="@string/list_of_recipes_menu"
         tools:layout="@layout/fragment_new_recipe" />
 
     <fragment
         android:id="@+id/navigation_settings"
-        android:name="com.example.deliciousnotes.ui.calculator.CalculatorFragment"
+        android:name="com.example.deliciousnotes.ui.settings.SettingsFragment"
         android:label="@string/settings_menu"
-        tools:layout="@layout/fragment_calculator" />
+        tools:layout="@layout/fragment_settings" />
 
     <fragment
         android:id="@+id/navigation_calculator"

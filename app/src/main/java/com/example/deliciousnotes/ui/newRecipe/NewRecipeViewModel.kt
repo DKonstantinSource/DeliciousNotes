@@ -1,13 +1,17 @@
 package com.example.deliciousnotes.ui.newRecipe
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
+
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.deliciousnotes.domain.recipesList.api.ManageRecipeRepository
+import com.example.deliciousnotes.domain.recipesList.model.Recipe
+import kotlinx.coroutines.launch
 
-class NewRecipeViewModel : ViewModel() {
+class NewRecipeViewModel(private val repository: ManageRecipeRepository) : ViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is dashboard Fragment"
+    fun saveRecipe(recipe: Recipe) {
+        viewModelScope.launch {
+            repository.insertRecipe(recipe)
+        }
     }
-    val text: LiveData<String> = _text
 }

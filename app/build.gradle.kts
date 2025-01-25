@@ -1,11 +1,13 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    kotlin("kapt")
 }
 
 android {
     namespace = "com.example.deliciousnotes"
     compileSdk = 35
+
 
     defaultConfig {
         applicationId = "com.example.deliciousnotes"
@@ -26,6 +28,14 @@ android {
             )
         }
     }
+
+    kapt {
+        arguments {
+            arg("room.schemaLocation", "$projectDir/schemas")
+            arg("room.incremental", "true")
+        }
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
@@ -36,27 +46,29 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
 }
 
 dependencies {
+    implementation (libs.keyboardvisibilityevent)
 
-    implementation ("com.google.android.material:material:1.8.0")
+    val room_version = "2.4.3"
+    implementation ("androidx.room:room-runtime:$room_version")
 
-
-    implementation (libs.androidx.navigation.fragment.ktx.v253)
-    implementation (libs.androidx.navigation.ui.ktx.v253)
-    implementation (libs.androidx.fragment.ktx)
-
-    implementation ("io.insert-koin:koin-android:3.3.0")
-
+    kapt ("androidx.room:room-compiler:2.6.1")
+    implementation(libs.material.v180)
+    implementation(libs.androidx.navigation.fragment.ktx.v253)
+    implementation(libs.androidx.navigation.ui.ktx.v253)
+    implementation(libs.androidx.fragment.ktx)
+    implementation(libs.koin.android)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
-    implementation(libs.androidx.navigation.fragment.ktx)
-    implementation(libs.androidx.navigation.ui.ktx)
+    implementation ("androidx.fragment:fragment-ktx:1.8.5") // или более новая версия
+    implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.8.7")
     implementation(libs.androidx.legacy.support.v4)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

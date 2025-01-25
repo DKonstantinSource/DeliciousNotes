@@ -26,5 +26,6 @@ class HostActivity : AppCompatActivity() {
         navController = navHostFragment.navController
 
         binding.bottomNavigation.setupWithNavController(navController)
+
     }
 }

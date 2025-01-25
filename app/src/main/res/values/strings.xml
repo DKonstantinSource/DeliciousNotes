@@ -6,4 +6,18 @@
     <string name="calculator_menu">Калькулятор БЖУ</string>
     <string name="settings_menu">Настройки</string>
 
+    <string name="dark_theme_switcher">Темная тема </string>
+    
+    <string name="breakfast">Завтрак</string>
+    <string name="lunch">Обед</string>
+    <string name="dinner">Ужин</string>
+
+    <string name="enterRecipeName">Введите название блюда</string>
+    <string name="addIngredient">Добавить ингредиент</string>
+    <string name="addTechnologyCooking">Технология приготовления</string>
+    <string name="saveRecipe">Сохранить рецепт</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+
+
 </resources>
