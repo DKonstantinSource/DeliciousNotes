@@ -11,11 +11,11 @@ class DomainRecipeRepositoryImpl(
     private val recipeRepository: RecipeRepository
 ) : ManageRecipeRepository {
 
-    override fun insertRecipe(recipe: DomainRecipe) {
+    override suspend fun insertRecipe(recipe: DomainRecipe) {
         recipeRepository.insertRecipe(RecipeMapper.map(recipe))
     }
 
-    override fun getAllRecipes(): List<DomainRecipe> {
+    override suspend fun getAllRecipes(): List<DomainRecipe> {
         Log.d("DomainRecipeRepository", "Fetching all recipes.")
         return try {
             recipeRepository.getAllRecipes().map { RecipeMapper.map(it) }
@@ -25,7 +25,7 @@ class DomainRecipeRepositoryImpl(
         }
     }
 
-    override fun clearAllRecipes() {
+    override suspend fun clearAllRecipes() {
         recipeRepository.clearAllRecipes()
     }
 }

@@ -40,7 +40,6 @@ class ListRecipesFragment : Fragment() {
             Log.e("ViewModelError", "Error calling fetchAllRecipes", e)
         }
 
-        // Наблюдение за изменениями в списке рецептов
         listRecipesViewModel.recipes.observe(viewLifecycleOwner) { recipes ->
             recipeAdapter.updateRecipes(recipes)
         }

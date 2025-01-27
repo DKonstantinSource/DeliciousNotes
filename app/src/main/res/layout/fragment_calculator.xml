@@ -5,16 +5,104 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     tools:context=".ui.calculator.CalculatorFragment">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:orientation="vertical"
-        tools:ignore="MissingConstraints"
-        >
+    <TextView
+        android:padding="8dp"
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/calculate_pfc_text"
+        android:textAlignment="center"
+        android:textSize="28sp"
+        android:fontFamily="@font/roboto_bold_italic"
+        app:layout_constraintBottom_toTopOf="@+id/proteinsEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    </LinearLayout>
+    <EditText
+        android:id="@+id/proteinsEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/roboto_variable"
+        android:textSize="22sp"
+        android:textAlignment="center"
+        android:hint="@string/text_enter_protein"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView"
+        tools:ignore="Autofill" />
 
+    <EditText
+        android:id="@+id/fatFitEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textSize="22sp"
+        android:fontFamily="@font/roboto_variable"
+        android:hint="@string/text_enter_fats"
+        android:textAlignment="center"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/proteinsEditText"
+        tools:ignore="Autofill" />
+
+    <EditText
+        android:id="@+id/carbohydratesEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/roboto_variable"
+        android:hint="@string/text_enter_carbohydrates"
+        android:textAlignment="center"
+        android:textSize="22sp"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fatFitEditText"
+        tools:ignore="Autofill" />
+
+    <Button
+        android:id="@+id/calculateButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:textSize="18sp"
+        android:text="@string/calculate_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/carbohydratesEditText"
+        android:background="@drawable/rounded_add_button"/>
+
+    <Button
+        android:id="@+id/clear_calculate_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:textSize="18sp"
+        android:text="@string/clear_calculator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calculateButton"
+        android:background="@drawable/rounded_add_button"/>
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/pfcResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_variable"
+        android:text="@string/result_calories_count"
+        android:textAlignment="center"
+        android:textSize="22sp"
+        app:layout_constraintTop_toBottomOf="@+id/clear_calculate_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

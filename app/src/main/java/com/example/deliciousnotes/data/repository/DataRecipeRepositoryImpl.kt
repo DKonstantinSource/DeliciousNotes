@@ -3,20 +3,28 @@ package com.example.deliciousnotes.data.repository
 import com.example.deliciousnotes.data.model.Recipe
 import com.example.deliciousnotes.db.RecipeDao
 import com.example.deliciousnotes.domain.recipesList.repository.RecipeRepository
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 class DataRecipeRepositoryImpl(
     private val recipeDao: RecipeDao
 ) : RecipeRepository {
 
-    override fun insertRecipe(recipe: Recipe) {
-        recipeDao.insert(recipe)
+    override suspend fun insertRecipe(recipe: Recipe) {
+        withContext(Dispatchers.IO) {
+            recipeDao.insert(recipe)
+        }
     }
 
-    override fun getAllRecipes(): List<Recipe> {
-        return recipeDao.getAllRecipes()
+    override suspend fun getAllRecipes(): List<Recipe> {
+        return withContext(Dispatchers.IO) {
+            recipeDao.getAllRecipes()
+        }
     }
 
-    override fun clearAllRecipes() {
-        recipeDao.clearAll()
+    override suspend fun clearAllRecipes() {
+        withContext(Dispatchers.IO) {
+            recipeDao.clearAll()
+        }
     }
 }
