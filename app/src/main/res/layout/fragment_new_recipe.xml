@@ -12,13 +12,15 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp">
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
 
 
         <ImageView
+            android:id="@+id/select_image_view"
+            android:contentDescription="@string/todo"
             android:paddingEnd="10dp"
             android:paddingStart="10dp"
-            android:id="@+id/recipe_image"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:src="@drawable/test_image"
@@ -28,7 +30,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:scaleType="centerCrop"
-            android:clipToOutline="true"
             android:background="@drawable/rounded_image_background" />
 
         <EditText
@@ -38,7 +39,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/enterRecipeName"
             android:importantForAutofill="no"
-            app:layout_constraintTop_toBottomOf="@id/recipe_image"
+            app:layout_constraintTop_toBottomOf="@id/select_image_view"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="16dp"
@@ -49,7 +50,7 @@
         <Spinner
             android:id="@+id/meal_time"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

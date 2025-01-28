@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.deliciousnotes"
-        minSdk = 31
+        minSdk = 29
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -51,6 +51,8 @@ android {
 
 dependencies {
     implementation (libs.keyboardvisibilityevent)
+
+    implementation (libs.easypermissions)
 
     val room_version = "2.4.3"
     implementation ("androidx.room:room-runtime:$room_version")

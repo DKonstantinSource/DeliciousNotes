@@ -1,5 +1,6 @@
 [versions]
 agp = "8.7.2"
+easypermissions = "3.0.0"
 fragmentKtx = "1.8.5"
 keyboardvisibilityevent = "2.0.0"
 koinAndroid = "3.3.0"
@@ -31,6 +32,7 @@ androidx-navigation-ui-ktx-v253 = { module = "androidx.navigation:navigation-ui-
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomRuntime" }
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomKtx" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
+easypermissions = { module = "pub.devrel:easypermissions", version.ref = "easypermissions" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
