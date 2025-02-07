@@ -24,4 +24,5 @@ class NewRecipeViewModel(private val repository: ManageRecipeRepository) : ViewM
     fun setImageUri(uri: Uri?) {
         _imageUri.value = uri
     }
+
 }

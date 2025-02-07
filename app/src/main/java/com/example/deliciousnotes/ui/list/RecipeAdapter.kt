@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.deliciousnotes.R
 import com.example.deliciousnotes.domain.recipesList.model.Recipe
 
@@ -25,7 +26,11 @@ class RecipeAdapter(
     override fun onBindViewHolder(holder: RecipeViewHolder, position: Int) {
         val recipe = recipeList[position]
         holder.recipeTitle.text = recipe.name
-        holder.recipeImage.setImageResource(R.drawable.test_image)
+
+        Glide.with(holder.recipeImage.context)
+            .load(recipe.image)
+            .placeholder(R.drawable.test_image)
+            .into(holder.recipeImage)
     }
 
     override fun getItemCount(): Int = recipeList.size

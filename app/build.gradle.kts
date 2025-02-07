@@ -50,6 +50,7 @@ android {
 }
 
 dependencies {
+    implementation (libs.glide)
     implementation (libs.keyboardvisibilityevent)
 
     implementation (libs.easypermissions)

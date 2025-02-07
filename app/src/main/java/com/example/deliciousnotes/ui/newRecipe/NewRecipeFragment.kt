@@ -45,7 +45,7 @@ class NewRecipeFragment : Fragment() {
                 binding.selectImageView.setImageURI(it)
                 binding.selectImageView.setBackgroundResource(0)
             } ?: run {
-                binding.selectImageView.setBackgroundResource(R.drawable.test_image)
+                binding.selectImageView.setBackgroundResource(0)
             }
         }
 
