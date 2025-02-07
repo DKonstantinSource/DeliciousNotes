@@ -8,35 +8,20 @@
     android:paddingEnd="16dp"
     tools:context=".ui.list.ListRecipesFragment">
 
-    <FrameLayout
-
-        android:layout_marginTop="4dp"
-        android:id="@+id/search_container"
+    <EditText
+        android:id="@+id/ingredientInput"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        tools:ignore="MissingConstraints">
-
-        <EditText
-            android:id="@+id/ingredientInput"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="SearchField"
-            android:importantForAutofill="no"
-            android:padding="12dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="Autofill,HardcodedText,TextFields"
-            android:fontFamily="@font/roboto_medium"/>
-
-    </FrameLayout>
+        android:layout_marginTop="8dp"
+        android:hint="Search recipes"
+        android:importantForAutofill="no"
+        android:padding="12dp"
+        android:fontFamily="@font/roboto_medium" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/search_container"
-        android:layout_alignParentBottom="true"
-        tools:ignore="MissingConstraints">
-
-    </androidx.recyclerview.widget.RecyclerView>
+        android:layout_height="match_parent"
+        android:layout_below="@id/ingredientInput"
+        android:layout_marginTop="8dp" />
 </RelativeLayout>

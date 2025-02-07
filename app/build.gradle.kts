@@ -53,6 +53,8 @@ dependencies {
     implementation (libs.keyboardvisibilityevent)
 
     implementation (libs.easypermissions)
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.0")
+    implementation ("androidx.room:room-ktx:2.5.0")
 
     val room_version = "2.4.3"
     implementation ("androidx.room:room-runtime:$room_version")
@@ -69,7 +71,7 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
-    implementation ("androidx.fragment:fragment-ktx:1.8.5") // или более новая версия
+    implementation ("androidx.fragment:fragment-ktx:1.8.5")
     implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.8.7")
     implementation(libs.androidx.legacy.support.v4)
     testImplementation(libs.junit)
