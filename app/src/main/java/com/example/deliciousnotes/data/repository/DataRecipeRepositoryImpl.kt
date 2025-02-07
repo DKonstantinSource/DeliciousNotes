@@ -12,7 +12,7 @@ class DataRecipeRepositoryImpl(
 
     override suspend fun insertRecipe(recipe: Recipe) {
         withContext(Dispatchers.IO) {
-            recipeDao.insert(recipe)
+            recipeDao.insertAllRecipes(listOf(recipe))
         }
     }
 

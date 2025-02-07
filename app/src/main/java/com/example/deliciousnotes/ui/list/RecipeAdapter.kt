@@ -8,7 +8,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.deliciousnotes.R
-import com.example.deliciousnotes.R.drawable.test_image
 import com.example.deliciousnotes.domain.recipesList.model.Recipe
 
 class RecipeAdapter(
@@ -26,12 +25,7 @@ class RecipeAdapter(
     override fun onBindViewHolder(holder: RecipeViewHolder, position: Int) {
         val recipe = recipeList[position]
         holder.recipeTitle.text = recipe.name
-        holder.recipeImage.setImageResource(test_image)
-        //TODO ссылки на image пока что нету !!
-
-        val layoutParams = holder.itemView.layoutParams
-        layoutParams.width = itemWidth
-        holder.itemView.layoutParams = layoutParams
+        holder.recipeImage.setImageResource(R.drawable.test_image)
     }
 
     override fun getItemCount(): Int = recipeList.size

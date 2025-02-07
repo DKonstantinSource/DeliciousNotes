@@ -41,6 +41,7 @@ class ListRecipesFragment : Fragment() {
         }
 
         listRecipesViewModel.recipes.observe(viewLifecycleOwner) { recipes ->
+            Log.d("ListRecipesFragment", "Recipes size: ${recipes.size}")
             recipeAdapter.updateRecipes(recipes)
         }
 
